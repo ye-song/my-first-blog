@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">Django Noob Blog</a></h1>
         </div>
-
+{% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This feels so noob, i don't enjoy tweaking HTML.</p>
+            <p>published: {{post.published_date}}</p>
+            <h1><a href="">{{post.title}}</a></h1>
+            <p>{{post.text|linebreaks}}</p>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I need to level up my Django skills fast, i still don't like HTML.</p>
-        </div>
+{% endfor %}   
     </body>
 </html>
